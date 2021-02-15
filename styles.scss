@@ -1,4 +1,6 @@
-$Red: hsl(0, 78%, 62%);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+$red: hsl(0, 78%, 62%);
 $cyan: hsl(180, 62%, 55%);
 $orange: hsl(34, 97%, 64%);
 $blue: hsl(212, 86%, 64%);
@@ -6,17 +8,19 @@ $veryDarkBlue: hsl(234, 12%, 34%);
 $grayishBlue: hsl(229, 6%, 66%);
 $veryLightGray: hsl(0, 0%, 98%);
 
-* {
+*, *::before, *::after {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     background-color: $veryLightGray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
 .container {
-    font-size: 15px;
     max-width: 1440px;
     width: 95%;
     margin: 60px auto 0 auto;
@@ -24,57 +28,102 @@ body {
 
 .top-section {
     text-align: center;
-    // margin-bottom: 100px;
 
     h1 {
-        font-weight: 400;
-        color: $grayComonRinanMoo;
-        margin-bottom: 4px;
+        font-weight: 200;
+        color: $veryDarkBlue;
+        // margin-bottom: 1px;
+        line-height: 1.2;
+        font-size: 2em;
     }
 
     h2 {
         font-weight: 600;
         color: $veryDarkBlue;
         margin-bottom: 8px;
+        font-size: 2em;
     }
 
     p {
-        color: $grayCommonRinanMoo;
-        width: 30%;
+        color: $grayishBlue;
+        width: 40%;
         line-height: 1.4;
         text-align: center;
         margin: 0 auto;
-
+        font-size: 1em;
     }
 }
 
 .card-section {
+    // width: 100%;
     display: flex;
     gap: 25px;
-    padding: 100px 50px;
-    background-color: salmon;
+    align-items: center;
+    padding: 60px 100px;
+    // background-color: salmon;
+
+    .card-section__group {
+        flex: 1.1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .card {
+            width: 100%;
+            flex: 250px;
+            padding: 30px 20px;
+        }
+    }
 
     .card {
         flex: 1;
-        padding: 30px 20px;
+        padding: 25px 20px;
         background-color: white;
         border-radius: 5px;
-        border-top: 5px solid $cyan;
+        border-top: 5px solid;
         position: relative;
+        min-height: 250px;
+        width: calc(100%/3);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.02);
+
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.12);;
+        }
+
+        &.supervisor {
+            border-top-color: $cyan;
+        }
+        &.team-builder {
+            border-top-color: $red;
+        }
+        &.karma {
+            border-top-color: $orange;
+        }
+        &.calculator {
+            border-top-color: $blue;
+        }
 
         h4 {
             font-weight: 600;
-            line-height: 2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
 
         p {
-            color: $veryDarkBlue;
+            color: $grayishBlue;
+            font-size: .9em;
+            line-height: 1.8;
         }
-
+        
         img {
-            width: 12px;
-            height: 12px;
-            
+            margin-bottom: 30px;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+
         }
     }
 }

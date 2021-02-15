@@ -1,15 +1,18 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
   background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 
 .container {
-  font-size: 15px;
   max-width: 1440px;
   width: 95%;
   margin: 60px auto 0 auto;
@@ -20,23 +23,26 @@ body {
 }
 
 .top-section h1 {
-  font-weight: 400;
-  color: #a3a5ae;
-  margin-bottom: 4px;
+  font-weight: 200;
+  color: #4c4e61;
+  line-height: 1.2;
+  font-size: 2em;
 }
 
 .top-section h2 {
   font-weight: 600;
   color: #4c4e61;
   margin-bottom: 8px;
+  font-size: 2em;
 }
 
 .top-section p {
   color: #a3a5ae;
-  width: 30%;
+  width: 40%;
   line-height: 1.4;
   text-align: center;
   margin: 0 auto;
+  font-size: 1em;
 }
 
 .card-section {
@@ -44,26 +50,90 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 25px;
-  padding: 100px 50px;
-  background-color: salmon;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px 100px;
+}
+
+.card-section .card-section__group {
+  -webkit-box-flex: 1.1;
+      -ms-flex: 1.1;
+          flex: 1.1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+
+.card-section .card-section__group .card {
+  width: 100%;
+  -webkit-box-flex: 250px;
+      -ms-flex: 250px;
+          flex: 250px;
+  padding: 30px 20px;
 }
 
 .card-section .card {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 30px 20px;
+  padding: 25px 20px;
   background-color: white;
   border-radius: 5px;
-  border-top: 5px solid #45d3d3;
+  border-top: 5px solid;
+  position: relative;
+  min-height: 250px;
+  width: calc(100%/3);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.02);
+}
+
+.card-section .card:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card-section .card.supervisor {
+  border-top-color: #45d3d3;
+}
+
+.card-section .card.team-builder {
+  border-top-color: #ea5353;
+}
+
+.card-section .card.karma {
+  border-top-color: #fcaf4a;
+}
+
+.card-section .card.calculator {
+  border-top-color: #549ef2;
 }
 
 .card-section .card h4 {
   font-weight: 600;
-  line-height: 2;
+  margin-bottom: 10px;
+  font-size: 1.2em;
 }
 
 .card-section .card p {
-  color: #4c4e61;
+  color: #a3a5ae;
+  font-size: .9em;
+  line-height: 1.8;
+}
+
+.card-section .card img {
+  margin-bottom: 30px;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
