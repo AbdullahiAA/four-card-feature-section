@@ -32,7 +32,6 @@ body {
     h1 {
         font-weight: 200;
         color: $veryDarkBlue;
-        // margin-bottom: 1px;
         line-height: 1.2;
         font-size: 2em;
     }
@@ -47,7 +46,7 @@ body {
     p {
         color: $grayishBlue;
         width: 40%;
-        line-height: 1.4;
+        line-height: 1.7;
         text-align: center;
         margin: 0 auto;
         font-size: 1em;
@@ -55,40 +54,32 @@ body {
 }
 
 .card-section {
-    // width: 100%;
     display: flex;
-    gap: 25px;
+    gap: 35px;
     align-items: center;
-    padding: 60px 100px;
-    // background-color: salmon;
+    padding: 60px 120px;
+    flex-wrap: wrap;
 
     .card-section__group {
-        flex: 1.1;
+        flex: 1 1 200px;
         display: flex;
         flex-direction: column;
-        gap: 25px;
-
-        .card {
-            width: 100%;
-            flex: 250px;
-            padding: 30px 20px;
-        }
+        gap: 35px;
     }
 
     .card {
-        flex: 1;
-        padding: 25px 20px;
+        flex: 1 1 200px;
+        padding: 25px 30px;
         background-color: white;
         border-radius: 5px;
         border-top: 5px solid;
         position: relative;
         min-height: 250px;
-        width: calc(100%/3);
         transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         box-shadow: 0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.02);
 
         &:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.12);;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.12);
         }
 
         &.supervisor {
@@ -108,6 +99,7 @@ body {
             font-weight: 600;
             margin-bottom: 10px;
             font-size: 1.2em;
+            color: $veryDarkBlue
         }
 
         p {
@@ -117,13 +109,142 @@ body {
         }
         
         img {
-            margin-bottom: 30px;
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 60px;
             position: absolute;
-            bottom: 0;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
+        }
+    }
+}
 
+.attribution { 
+    font-size: 11px;
+    text-align: center; 
+
+    a {
+        color: hsl(228, 45%, 44%); 
+    }
+}
+
+@media (max-width: 1024px) {
+    .top-section p {
+        width: 60%;
+    }
+    
+    .card-section {
+        padding: 60px 80px;
+    }
+}
+
+@media (max-width: 870px) {
+    .top-section p {
+        width: 80%;
+    }
+
+    .card-section {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 785px) {
+    .top-section p {
+        width: 70%;
+    }
+
+    .card-section {
+        padding: 60px 20px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 722px) {
+    .top-section p {
+        width: 80%;
+    }
+
+    .card-section {
+        padding: 60px 10px;
+
+        .card {
+            padding: 25px;
+
+            h4 {
+                font-size: 1.1em;
+            }
+
+            p {
+                font-size: .88em;
+            }
+        }
+    }   
+}
+
+@media (max-width: 690px) {
+    .top-section p {
+        width: 90%;
+    }
+
+    .card-section {
+        align-items: flex-start;
+        
+        .card-section__group {
+            display: inline-flex;
+            align-items: flex-start;
+            flex-direction: row;
+            order: 3;
+        }
+        
+        .card {
+            flex-basis: 220px;
+            
+            &.supervisor {
+                order: 1;
+            }
+
+            &.calculator {
+                order: 2;
+            }
+        }
+    }
+}
+
+@media (max-width: 498px) {
+    .top-section {
+        h1, h2 {
+            font-size: 1.8em;
+        }
+    }
+    
+    .card-section {
+        flex-direction: column;
+        flex: 1 1 400px;
+        gap: 25px;
+        padding: 60px 20px;
+        
+        .card-section__group {
+            order: 2;
+            flex-direction: column;
+        }
+        
+        .card {
+            width: 100%;
+
+            &.supervisor {
+                order: 1;
+            }
+
+            &.calculator {
+                order: 3;
+            }
+
+            h4 {
+                font-size: 1.2em;
+            }
+
+            p {
+                font-size: .95em;
+            }
         }
     }
 }
